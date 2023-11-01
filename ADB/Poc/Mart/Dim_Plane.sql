@@ -8,10 +8,6 @@ DESC cleansed_poc.plane
 
 -- COMMAND ----------
 
-DROP TABLE DIM_PLANE
-
--- COMMAND ----------
-
 CREATE TABLE IF NOT EXISTS DIM_PLANE (
   tailid STRING,
   type STRING,
@@ -23,10 +19,6 @@ CREATE TABLE IF NOT EXISTS DIM_PLANE (
   engine_type STRING,
   year INT
 ) USING DELTA LOCATION '/mnt/mart_datalake/DIM_PLANE'
-
--- COMMAND ----------
-
--- MAGIC %fs mounts
 
 -- COMMAND ----------
 
