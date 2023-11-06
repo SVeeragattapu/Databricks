@@ -48,3 +48,29 @@ def pre_schema(location):
 # MAGIC             raise Exception("Difference is huge",table_name)
 # MAGIC         else:
 # MAGIC             pass
+
+# COMMAND ----------
+
+def insert_test_cases(database,insert_id,insert_test_cases,insert_test_query,insert_expected_result):
+    try:
+        spark.sql(f""" create table if not exists {database}.insert_test_cases(
+                id int,
+                test_cases string,
+                test_query string,
+                expected_result int
+        )""")
+
+        spark.sql(f""" insert into {database}.insert_test_cases(id,test_cases,test_query,expected_result) values ({insert_id},'{insert_test_cases}','{insert_test_query}',{insert_expected_result})""")
+    except Exception as err:
+        print("Error occurred",str(err))
+
+# COMMAND ----------
+
+def execute_test_case(database):
+    df = spark.sql(f"""select * from {database}.insert_test_cases """).collect()
+    for i in df:
+        original_result = spark.sql(f"""{i.test_query}""").collect()
+        if(len(original_result)==i.expected_result):
+            print("Test case is passed")
+        else:
+            raise Exception (f"{test_cases} is failed, Kindly check")
