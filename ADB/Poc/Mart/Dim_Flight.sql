@@ -50,4 +50,5 @@ LOCATION '/mnt/mart_datalake/Reporting_Flight'
 -- MAGIC   FlightNum,
 -- MAGIC   TailNum,
 -- MAGIC   deptime
+-- MAGIC <<<<<<< Updated upstream
 -- MAGIC   FROM cleansed_poc.flight where year(date)={max_year} """)

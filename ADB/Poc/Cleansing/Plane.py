@@ -22,7 +22,7 @@ df_base = df.selectExpr(
     "status",
     "aircraft_type",
     "engine_type",
-    "cast('year' as int) as year",
+    "cast(year as int) as year",
     "to_date(Date_Part,'yyyy-MM-dd') as Date_Part",
 )
 

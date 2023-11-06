@@ -9,7 +9,7 @@ df = spark.readStream.format("cloudFiles").option("cloudFiles.format",'csv')\
 
 # COMMAND ----------
 
-dbutils.fs.rm('/dbfs/FileStore/tables/checkpointLocation/Airport',True)
+#dbutils.fs.rm('/dbfs/FileStore/tables/checkpointLocation/Airport',True)
 
 # COMMAND ----------
 
@@ -32,7 +32,6 @@ df_base.writeStream.trigger(once=True)\
 
 #schema=pre_schema('/mnt/cleansed_datalake/airport')
 f_delta_cleansed_load('airport','/mnt/cleansed_datalake/airport','cleansed_poc')
-
 
 # COMMAND ----------
 
