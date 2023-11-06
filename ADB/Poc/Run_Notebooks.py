@@ -25,7 +25,8 @@ Notebook_Path_Json = {
         "/Poc/Mart/Dim_Flight",
         "/Poc/Mart/Dim_Plane",
         "/Poc/Mart/Dim_UniqueCarrier",
-    ]
+    ],
+    "Data_Quality_Mart": ["/Poc/Data_Quality_Noteboook/Execute_Mart_Data_Quality"]
 
 }
 
